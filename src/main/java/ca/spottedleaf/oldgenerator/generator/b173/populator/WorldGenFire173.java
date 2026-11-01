@@ -17,7 +17,7 @@ public class WorldGenFire173 extends WorldGenerator173 {
             int k1 = centerZ + random.nextInt(8) - random.nextInt(8);
 
             if (BlockConstants.isAir(world.getType(i1, j1, k1)) && world.getType(i1, j1 - 1, k1) == Material.NETHERRACK) {
-                world.setBlockData(i1, j1, k1, BlockConstants.FIRE, false);
+                world.setBlockData(i1, j1, k1, BlockConstants.FIRE, true); // beta used setTypeId here (physics on)
             }
         }
 

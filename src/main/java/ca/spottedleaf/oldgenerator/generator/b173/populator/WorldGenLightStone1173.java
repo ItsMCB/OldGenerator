@@ -16,7 +16,7 @@ public class WorldGenLightStone1173 extends WorldGenerator173 {
         } else if (world.getType(centerX, centerY + 1, centerZ) != Material.NETHERRACK) {
             return false;
         } else {
-            world.setBlockData(centerX, centerY, centerZ, BlockConstants.GLOWSTONE, false);
+            world.setBlockData(centerX, centerY, centerZ, BlockConstants.GLOWSTONE, true); // beta used setTypeId here (physics on)
 
             for (int l = 0; l < 1500; ++l) {
                 int i1 = centerX + random.nextInt(8) - random.nextInt(8);
@@ -59,7 +59,7 @@ public class WorldGenLightStone1173 extends WorldGenerator173 {
                     }
 
                     if (l1 == 1) {
-                        world.setBlockData(i1, j1, k1, BlockConstants.GLOWSTONE, false);
+                        world.setBlockData(i1, j1, k1, BlockConstants.GLOWSTONE, true); // beta used setTypeId here (physics on)
                     }
                 }
             }

@@ -648,9 +648,9 @@ public class ChunkProviderGenerate173 implements OldChunkGenerator {
                 Material below;
 
                 if (d1 < 0.5D && l3 > blockAccess.getMinHeight() && l3 < (blockAccess.getMaxHeight() + 1) && blockAccess.getType(i3, l3, l2).isAir() && LegacyUtil173.Material_isSolid((below = blockAccess.getType(i3, l3 - 1, l2))) && below != Material.ICE) {
-                    blockAccess.setBlockData(i3, l3, l2, BlockConstants.SNOW, false);
+                    blockAccess.setBlockData(i3, l3, l2, BlockConstants.SNOW, true); // beta used setTypeId here (physics on)
                     if (below == Material.GRASS_BLOCK) {
-                        blockAccess.setBlockData(i3, l3 - 1, l2, BlockConstants.SNOWY_GRASS_BLOCK, false);
+                        blockAccess.setBlockData(i3, l3 - 1, l2, BlockConstants.SNOWY_GRASS_BLOCK, false); // modern-only cosmetic, not in beta
                     }
                 }
             }

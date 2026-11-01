@@ -50,14 +50,14 @@ public class WorldGenDungeons173 extends WorldGenerator173 {
                 for (l1 = centerY + b0; l1 >= centerY - 1; --l1) {
                     for (i2 = centerZ - i1 - 1; i2 <= centerZ + i1 + 1; ++i2) {
                         if (k1 != centerX - l - 1 && l1 != centerY - 1 && i2 != centerZ - i1 - 1 && k1 != centerX + l + 1 && l1 != centerY + b0 + 1 && i2 != centerZ + i1 + 1) {
-                            world.setBlockData(k1, l1, i2, BlockConstants.AIR, false);
+                            world.setBlockData(k1, l1, i2, BlockConstants.AIR, true); // beta used setTypeId here (physics on) - this is what caves in unsupported sand/gravel
                         } else if (l1 >= 0 && !LegacyUtil173.Material_isBuildable(world.getType(k1, l1 - 1, i2))) {
-                            world.setBlockData(k1, l1, i2, BlockConstants.AIR, false);
+                            world.setBlockData(k1, l1, i2, BlockConstants.AIR, true); // beta used setTypeId here (physics on)
                         } else if (LegacyUtil173.Material_isBuildable(world.getType(k1, l1, i2))) {
                             if (l1 == centerY - 1 && random.nextInt(4) != 0) {
-                                world.setBlockData(k1, l1, i2, BlockConstants.MOSSY_COBBLESTONE, false);
+                                world.setBlockData(k1, l1, i2, BlockConstants.MOSSY_COBBLESTONE, true); // beta used setTypeId here (physics on)
                             } else {
-                                world.setBlockData(k1, l1, i2, BlockConstants.COBBLESTONE, false);
+                                world.setBlockData(k1, l1, i2, BlockConstants.COBBLESTONE, true); // beta used setTypeId here (physics on)
                             }
                         }
                     }
@@ -95,7 +95,7 @@ public class WorldGenDungeons173 extends WorldGenerator173 {
                                 }
 
                                 if (k2 == 1) {
-                                    world.setBlockData(i2, centerY, j2, BlockConstants.CHEST, false);
+                                    world.setBlockData(i2, centerY, j2, BlockConstants.CHEST, true); // beta used setTypeId here (physics on)
                                     Chest tileentitychest = (Chest)world.getBlockState(i2, centerY, j2);
 
                                     for (int l2 = 0; l2 < 8; ++l2) {
@@ -119,7 +119,7 @@ public class WorldGenDungeons173 extends WorldGenerator173 {
                 }
             }
 
-            world.setBlockData(centerX, centerY, centerZ, BlockConstants.SPAWNER, false);
+            world.setBlockData(centerX, centerY, centerZ, BlockConstants.SPAWNER, true); // beta used setTypeId here (physics on)
             CreatureSpawner tileentitymobspawner = (CreatureSpawner)world.getBlockState(centerX, centerY, centerZ);
 
             tileentitymobspawner.setSpawnedType(this.getRandomSpawnerType(random));
